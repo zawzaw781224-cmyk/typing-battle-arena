@@ -1,6 +1,6 @@
 console.log("FRIENDS JS LOADED");
 
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = "https://typing-battle-arena-pypn.vercel.app";
 
 const token = localStorage.getItem("access_token");
 

@@ -2,7 +2,7 @@ console.log("GAME JS LOADED");
 
 
 const API_BASE_URL =
-    "http://127.0.0.1:8000";
+    "https://typing-battle-arena-pypn.vercel.app";
 
 
 const token =
@@ -361,7 +361,7 @@ function connectWebSocket() {
 
     socket =
         new WebSocket(
-            `ws://127.0.0.1:8000/ws/${encodeURIComponent(roomCode)}?token=${encodeURIComponent(wsToken)}`
+            `wss://htet-typing.onrender.com/ws/${encodeURIComponent(roomCode)}?token=${encodeURIComponent(wsToken)}`
         );
 
 
