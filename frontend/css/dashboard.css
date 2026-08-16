@@ -1,0 +1,473 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #080b12;
+
+    color: #ffffff;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 45px;
+
+    background: #10151f;
+
+    border-bottom: 1px solid #202938;
+}
+
+
+.logo {
+    font-size: 20px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    color: #ffffff;
+}
+
+
+.top-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+#usernameDisplay {
+    color: #cbd5e1;
+
+    font-size: 14px;
+}
+
+
+#logoutBtn {
+    padding: 8px 15px;
+
+    border-radius: 8px;
+
+    border: 1px solid #293548;
+
+    background: transparent;
+
+    color: #cbd5e1;
+
+    cursor: pointer;
+}
+
+
+#logoutBtn:hover {
+    border-color: #00e5ff;
+
+    color: #00e5ff;
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 50px 30px;
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.welcome-section {
+    margin-bottom: 35px;
+}
+
+
+.small-title {
+    color: #00e5ff;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+
+.welcome-section h1 {
+    font-size: 36px;
+
+    margin-bottom: 10px;
+}
+
+
+#welcomeUsername {
+    color: #00e5ff;
+}
+
+
+.welcome-section p:last-child {
+    color: #7f8da3;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 28px;
+
+    margin-bottom: 45px;
+
+    background: #10151f;
+
+    border: 1px solid #202938;
+
+    border-radius: 16px;
+}
+
+
+.profile-icon {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: #18202d;
+
+    font-size: 30px;
+}
+
+
+.profile-info {
+    flex: 1;
+}
+
+
+.profile-info h2 {
+    margin-bottom: 15px;
+
+    font-size: 20px;
+}
+
+
+.profile-row {
+    display: inline-flex;
+
+    flex-direction: column;
+
+    margin-right: 50px;
+
+    gap: 5px;
+}
+
+
+.profile-row span {
+    color: #718096;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+.profile-row strong {
+    color: #e2e8f0;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   GAME
+========================= */
+
+.game-section {
+    margin-bottom: 45px;
+}
+
+
+.section-title {
+    margin-bottom: 20px;
+}
+
+
+.section-title h2 {
+    font-size: 24px;
+
+    margin-bottom: 7px;
+}
+
+
+.section-title p {
+    color: #718096;
+
+    font-size: 13px;
+}
+
+
+.game-cards {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+.game-card {
+    padding: 35px;
+
+    border-radius: 16px;
+
+    background: #10151f;
+
+    border: 1px solid #202938;
+
+    transition: 0.2s;
+}
+
+
+.game-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #334155;
+}
+
+
+.game-icon {
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+
+.game-card h3 {
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+
+.game-card p {
+    color: #718096;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    max-width: 350px;
+
+    margin-bottom: 25px;
+}
+
+
+.game-btn {
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #00e5ff;
+
+    color: #061018;
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+
+.game-btn:hover {
+    box-shadow:
+        0 8px 25px rgba(0, 229, 255, 0.18);
+}
+
+
+/* =========================
+   FRIENDS
+========================= */
+
+.friends-section {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 25px;
+
+    background: #10151f;
+
+    border: 1px solid #202938;
+
+    border-radius: 16px;
+}
+
+
+.friends-section h2 {
+    font-size: 20px;
+
+    margin-bottom: 6px;
+}
+
+
+.friends-section p {
+    color: #718096;
+
+    font-size: 13px;
+}
+
+
+.friend-actions {
+    display: flex;
+
+    gap: 10px;
+}
+.secondary-btn {
+    padding: 10px 15px;
+
+    border-radius: 9px;
+
+    border: 1px solid #293548;
+
+    background: #151b27;
+
+    color: #cbd5e1;
+
+    cursor: pointer;
+}
+
+
+.secondary-btn:hover {
+    border-color: #00e5ff;
+
+    color: #00e5ff;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 750px) {
+
+    .topbar {
+        padding: 0 20px;
+    }
+
+
+    .dashboard {
+        padding: 35px 20px;
+    }
+
+
+    .welcome-section h1 {
+        font-size: 28px;
+    }
+
+
+    .profile-card {
+        align-items: flex-start;
+    }
+
+
+    .profile-row {
+        margin-bottom: 15px;
+
+        margin-right: 25px;
+    }
+
+
+    .game-cards {
+        grid-template-columns: 1fr;
+    }
+
+
+    .friends-section {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .friend-actions {
+        width: 100%;
+    }
+
+
+    .secondary-btn {
+        flex: 1;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .logo {
+        font-size: 16px;
+    }
+
+
+    #usernameDisplay {
+        display: none;
+    }
+
+
+    .profile-card {
+        flex-direction: column;
+    }
+
+
+    .friend-actions {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+}

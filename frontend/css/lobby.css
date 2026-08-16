@@ -1,0 +1,534 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+
+    background: #080b12;
+
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 45px;
+
+    background: #10151f;
+
+    border-bottom: 1px solid #202938;
+}
+
+
+.logo {
+    font-size: 20px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.back-btn {
+    color: #94a3b8;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+
+.back-btn:hover {
+    color: #00e5ff;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.lobby-page {
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 50px 30px;
+}
+
+
+.page-header {
+    margin-bottom: 35px;
+}
+
+
+.small-title {
+    color: #00e5ff;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+
+.page-header h1 {
+    font-size: 36px;
+
+    margin-bottom: 10px;
+}
+
+
+.page-header p:last-child {
+    color: #718096;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   MODE
+========================= */
+
+.mode-section {
+    margin-bottom: 25px;
+}
+
+
+.mode-section h2 {
+    margin-bottom: 15px;
+}
+
+
+.mode-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+
+.mode-card {
+    padding: 25px;
+
+    text-align: left;
+
+    border: 2px solid #202938;
+
+    border-radius: 16px;
+
+    background: #10151f;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.mode-card:hover {
+    border-color: #00e5ff;
+
+    transform: translateY(-2px);
+}
+
+
+.mode-card.selected {
+    border-color: #00e5ff;
+
+    background: #111d26;
+}
+
+
+.mode-icon {
+    font-size: 32px;
+
+    margin-bottom: 12px;
+}
+
+
+.mode-card h3 {
+    margin-bottom: 8px;
+}
+
+
+.mode-card p {
+    color: #718096;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   ROOM CARD
+========================= */
+
+.room-card {
+    padding: 30px;
+
+    margin-top: 20px;
+
+    background: #10151f;
+
+    border: 1px solid #202938;
+
+    border-radius: 16px;
+}
+
+
+.room-card h2 {
+    margin-bottom: 8px;
+}
+
+
+.room-card > p {
+    color: #718096;
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+}
+
+
+.selected-mode {
+    padding: 12px 15px;
+
+    margin-bottom: 15px;
+
+    border-radius: 9px;
+
+    background: #080b12;
+
+    border: 1px solid #202938;
+
+    color: #00e5ff;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.primary-btn,
+.secondary-btn {
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+
+.primary-btn {
+    background: #00e5ff;
+
+    color: #061018;
+}
+
+.secondary-btn {
+    background: #202938;
+
+    color: white;
+}
+
+
+.primary-btn:hover {
+    opacity: 0.9;
+}
+
+
+.secondary-btn:hover {
+    background: #293548;
+}
+
+
+/* =========================
+   JOIN
+========================= */
+
+.join-box {
+    display: flex;
+
+    gap: 10px;
+}
+
+
+.join-box input {
+    flex: 1;
+
+    padding: 13px 15px;
+
+    background: #080b12;
+
+    color: white;
+
+    border: 1px solid #293548;
+
+    border-radius: 9px;
+
+    outline: none;
+}
+
+
+.join-box input:focus {
+    border-color: #00e5ff;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.lobby-message {
+    margin-top: 20px;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    background: #10151f;
+
+    color: #94a3b8;
+
+    display: none;
+}
+
+/* =========================
+   START GAME BUTTON
+   ========================= */
+
+#startGameBtn {
+    display: none;
+
+    margin: 25px auto;
+    padding: 15px 45px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        #ff416c,
+        #ff4b2b
+    );
+
+    color: white;
+
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(255, 65, 108, 0.35);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+
+/* Hover */
+
+#startGameBtn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 35px rgba(255, 65, 108, 0.5);
+
+    filter: brightness(1.08);
+}
+
+
+/* Click */
+
+#startGameBtn:active {
+
+    transform: translateY(1px);
+
+    box-shadow:
+        0 5px 15px rgba(255, 65, 108, 0.3);
+}
+
+
+/* Disabled */
+
+#startGameBtn:disabled {
+
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .topbar {
+        padding: 0 20px;
+    }
+
+
+    .lobby-page {
+        padding: 35px 20px;
+    }
+
+
+    .mode-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .join-box {
+        flex-direction: column;
+    }
+
+
+    .join-box button {
+        width: 100%;
+    }
+
+}
+.room-status-card {
+    margin-top: 25px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    background: #10151f;
+
+    border: 1px solid #202938;
+
+    border-radius: 16px;
+}
+
+
+.room-status-card h2 {
+    margin: 10px 0 20px;
+
+    font-size: 30px;
+
+    letter-spacing: 2px;
+
+    color: #00e5ff;
+}
+
+
+.players-area {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    margin-top: 35px;
+}
+
+
+.player-box {
+    min-width: 150px;
+
+    padding: 20px;
+
+    background: #080b12;
+
+    border: 1px solid #202938;
+
+    border-radius: 12px;
+}
+
+
+.player-icon {
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+
+.player-box h3 {
+    margin-bottom: 8px;
+}
+
+
+.player-box span {
+    color: #718096;
+
+    font-size: 13px;
+}
+
+
+.vs {
+    color: #718096;
+
+    font-weight: 800;
+
+    font-size: 14px;
+}
+
+
+.waiting-message {
+    margin-top: 25px;
+
+    color: #718096;
+
+    font-size: 13px;
+}
+
+.host-only {
+    display: none;
+}
+
+@media (max-width: 600px) {
+
+    .players-area {
+        gap: 10px;
+    }
+
+    .player-box {
+        min-width: 110px;
+    }
+
+}

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Game Lobby | Typing Battle</title>
+
+    <link
+        rel="stylesheet"
+        href="css/lobby.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =========================
+         TOP BAR
+    ========================== -->
+
+    <header class="topbar">
+
+        <div class="logo">
+            ⚡ TYPING BATTLE
+        </div>
+
+        <a
+            href="dashboard.html"
+            class="back-btn"
+        >
+            ← Dashboard
+        </a>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="lobby-page">
+
+
+        <section class="page-header">
+
+            <p class="small-title">
+                MULTIPLAYER
+            </p>
+
+            <h1>
+                Game Lobby
+            </h1>
+
+            
+
+        </section>
+
+
+
+        
+
+
+
+        <!-- =========================
+             CREATE ROOM
+        ========================== -->
+
+        <section
+            class="room-card"
+            id="createSection"
+        >
+
+            
+
+            <h1 id="lobbyTitle">
+                Game Lobby
+            </h1>
+
+
+            
+
+
+            <button
+                id="createRoomBtn"
+                class="primary-btn"
+            >
+                🎮 Create Room
+            </button>
+
+        </section>
+
+
+
+        <!-- =========================
+             JOIN ROOM
+        ========================== -->
+
+        <section class="room-card">
+
+            <h2>
+                Join Room
+            </h2>
+
+            <p>
+                Enter the room code your friend sent you.
+            </p>
+
+
+            <form id="joinForm">
+
+                <div class="join-box">
+
+                    <input
+                        type="text"
+                        id="roomCodeInput"
+                        placeholder="ROOM-XXXXXX"
+                        required
+                    >
+
+                    <button 
+                        type="submit"
+                        class="secondary-btn"
+                    >
+                        Join
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+
+        <!-- =========================
+             STATUS
+        ========================== -->
+        <div
+            id="lobbyMessage"
+            class="lobby-message"
+        ></div>
+        
+
+
+        <section class="room-status-card" id="roomStatusSection">
+
+    <p class="small-title">
+        YOUR ROOM
+    </p>
+
+    <h2 id="roomCodeDisplay">
+        ROOM-XXXXXX
+    </h2>
+
+    <button
+        id="copyRoomBtn"
+        class="secondary-btn"
+    >
+        📋 Copy Room Code
+    </button>
+
+
+    <div class="players-area">
+
+        <div class="player-box">
+
+            <div class="player-icon">
+                👑
+            </div>
+
+            <h3>You</h3>
+
+            <span id="hostStatus">
+                Waiting
+            </span>
+
+        </div>
+
+
+        <div class="vs">
+            VS
+        </div>
+
+
+        <div class="player-box">
+
+            <div class="player-icon">
+                👤
+            </div>
+
+            <h3>Friend</h3>
+
+            <span id="guestStatus">
+                Waiting
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <p
+        id="waitingMessage"
+        class="waiting-message"
+    >
+        Share the room code with your friend.
+    </p>
+
+</section>
+<div class="ready-section">
+
+    <button type="button"
+        id="readyBtn"
+        class="primary-btn"
+    >
+        READY
+    </button>
+
+    <p id="readyMessage">
+        Both players must be ready before the game starts.
+    </p>
+    <button
+         type="button"
+         id="startGameBtn"
+         class="host-only"
+         
+         >
+         START GAME
+        </button>
+
+</div>
+
+
+    </main>
+
+
+    <script src="js/lobby.js"></script>
+
+</body>
+
+</html>

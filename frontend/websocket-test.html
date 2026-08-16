@@ -1,0 +1,800 @@
+<!DOCTYPE html><html><head>
+    <title>Typing Battle</title><style>
+
+    body {
+        margin: 0;
+        padding: 40px;
+        background: #111827;
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+
+    .game {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .players {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+
+    .player {
+        flex: 1;
+        background: #1f2937;
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .player h2 {
+        margin-top: 0;
+    }
+
+    .progress-container {
+        width: 100%;
+        height: 22px;
+        background: #374151;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .progress-bar {
+        width: 0%;
+        height: 100%;
+        background: #22c55e;
+        transition: width 0.2s ease;
+    }
+
+    .opponent-bar {
+        background: #ef4444;
+    }
+
+    .progress-text {
+        margin-top: 10px;
+    }
+
+    .target-text {
+        background: #1f2937;
+        padding: 25px;
+        border-radius: 12px;
+        font-size: 24px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    #typingInput {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 16px;
+        font-size: 20px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+    }
+
+    #status {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .target-text {
+background: #1f2937;
+padding: 25px;
+border-radius: 12px;
+font-size: 24px;
+line-height: 1.8;
+margin-bottom: 25px;
+word-wrap: break-word;
+}
+.race-container {
+    margin: 25px 0;
+}
+
+.player-row {
+    margin-bottom: 20px;
+}
+
+.player-name {
+    display: inline-block;
+    width: 100px;
+    font-weight: bold;
+}
+
+.race-track {
+    position: relative;
+    display: inline-block;
+    width: 70%;
+    height: 40px;
+    background: #e5e7eb;
+    border-radius: 20px;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.runner {
+    position: absolute;
+    left: 0;
+    top: 4px;
+    font-size: 28px;
+    transition: left 0.15s linear;
+}
+.hp-container {
+    margin: 25px 0;
+}
+
+.hp-player {
+    margin-bottom: 18px;
+}
+
+.hp-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.hp-bar {
+    width: 100%;
+    height: 22px;
+    background: #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.hp-fill {
+    width: 100%;
+    height: 100%;
+    background: #22c55e;
+    transition: width 0.2s ease;
+}
+
+.char {
+padding: 2px 1px;
+border-radius: 3px;
+}
+
+.char.completed {
+background: #22c55e;
+color: white;
+}
+
+.char.my-current {
+background: #3b82f6;
+color: white;
+box-shadow: 0 0 0 2px #60a5fa;
+}
+
+.char.opponent-current {
+background: #ef4444;
+color: white;
+box-shadow: 0 0 0 2px #f87171;
+}
+
+.char.both-current {
+background: #a855f7;
+color: white;
+box-shadow: 0 0 0 2px #c084fc;
+}
+
+.char.wrong {
+    background: #ef4444;
+    color: white;
+    animation: wrongShake 0.15s ease-in-out;
+}
+
+@keyframes wrongShake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-3px);
+    }
+
+    50% {
+        transform: translateX(3px);
+    }
+
+    75% {
+        transform: translateX(-3px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+</style>
+
+</head><body><div class="game"><h1>⚔️ Typing Battle</h1>
+
+
+<div class="players">
+
+
+    <!-- Player -->
+    <div class="player">
+
+        <h2>YOU</h2>
+
+        <div class="progress-container">
+
+            <div
+                id="myProgressBar"
+                class="progress-bar">
+            </div>
+
+        </div>
+
+        <div class="progress-text">
+
+            Progress:
+            <span id="myProgress">0</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- Opponent -->
+    <div class="player">
+
+        <h2>OPPONENT</h2>
+
+        <div class="progress-container">
+
+            <div
+                id="opponentProgressBar"
+                class="progress-bar opponent-bar">
+            </div>
+
+        </div>
+
+        <div class="progress-text">
+
+            Progress:
+            <span id="opponentProgress">0</span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Target Text -->
+
+<div
+    id="targetText"
+    class="target-text">
+
+    
+
+</div>
+<div class="race-container">
+
+    <div class="player-row">
+        <span class="player-name">YOU</span>
+
+        <div class="race-track">
+            <div id="myRunner" class="runner">🏃</div>
+        </div>
+    </div>
+
+
+    <div class="player-row">
+        <span class="player-name">OPPONENT</span>
+
+        <div class="race-track">
+            <div id="opponentRunner" class="runner">🏃</div>
+        </div>
+    </div>
+
+</div>
+
+<div class="hp-container">
+
+    <div class="hp-player">
+        <div class="hp-label">
+            YOU ❤️
+            <span id="myHpText">100 / 100</span>
+        </div>
+
+        <div class="hp-bar">
+            <div id="myHpBar" class="hp-fill"></div>
+        </div>
+    </div>
+
+
+    <div class="hp-player">
+        <div class="hp-label">
+            OPPONENT ❤️
+            <span id="opponentHpText">100 / 100</span>
+        </div>
+
+        <div class="hp-bar">
+            <div id="opponentHpBar" class="hp-fill"></div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Typing -->
+
+<input
+    id="typingInput"
+    type="text"
+    placeholder="Start typing..."
+    autocomplete="off"
+    autofocus
+>
+
+
+<div id="status">
+    Connecting...
+</div>
+
+</div><script>
+
+    const roomCode = "ROOM-CKKZ5J";
+
+
+    const token =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhdW5nIiwidXNlcl9pZCI6MiwiZXhwIjoxNzg2NjMzNDI4fQ.R6wZSVX-MeCAovb35v0PVw1d6RrCy_SJI82Kj168aTQ";
+
+
+    const ws = new WebSocket(
+        `ws://127.0.0.1:8000/ws/${roomCode}?token=${token}`
+    );
+
+
+    const input =
+        document.getElementById("typingInput");
+
+
+    const myProgress =
+        document.getElementById("myProgress");
+
+
+    const opponentProgress =
+        document.getElementById("opponentProgress");
+
+
+    const myProgressBar =
+        document.getElementById("myProgressBar");
+
+
+    const opponentProgressBar =
+        document.getElementById("opponentProgressBar");
+
+
+    const status =
+        document.getElementById("status");
+        function renderPassage(text) {
+
+    const targetText =
+        document.getElementById("targetText");
+
+    targetText.innerHTML = "";
+
+    for (let i = 0; i < text.length; i++) {
+
+        const span =
+            document.createElement("span");
+
+        span.className = "char";
+
+        // Space character ကိုလည်း မြင်ရအောင်
+        if (text[i] === " ") {
+            span.innerHTML = "&nbsp;";
+        } else {
+            span.innerText = text[i];
+        }
+
+        targetText.appendChild(span);
+    }
+}
+    function updateCharacterProgress(
+        myValue,
+        opponentValue
+    ) {
+
+        const chars =
+            document.querySelectorAll(".char");
+
+        chars.forEach((char, index) => {
+
+            char.classList.remove(
+                "completed",
+                "my-current",
+                "opponent-current",
+                "both-current"
+            );
+
+            /*
+            * ကိုယ်ရိုက်ပြီးသား
+            */
+            if (index < myValue) {
+                char.classList.add("completed");
+            }
+
+            /*
+            * လက်ရှိ ကိုယ်ရောက်နေတဲ့နေရာ
+            */
+            if (index === myValue) {
+                char.classList.add("my-current");
+            }
+
+            /*
+            * Opponent ရောက်နေတဲ့နေရာ
+            */
+            if (index === opponentValue) {
+
+                if (index === myValue) {
+
+                    char.classList.remove(
+                        "my-current"
+                    );
+
+                    char.classList.add(
+                        "both-current"
+                    );
+
+                } else {
+
+                    char.classList.add(
+                        "opponent-current"
+                    );
+                }
+            }
+
+        });
+    }
+    function updateRacePosition(
+    myProgress,
+    opponentProgress,
+    targetLength
+) {
+
+    const myRunner =
+        document.getElementById("myRunner");
+
+    const opponentRunner =
+        document.getElementById("opponentRunner");
+
+
+    const myPercentage =
+        (myProgress / targetLength) * 100;
+
+    const opponentPercentage =
+        (opponentProgress / targetLength) * 100;
+
+
+    myRunner.style.left =
+        `${Math.min(myPercentage, 96)}%`;
+
+    opponentRunner.style.left =
+        `${Math.min(opponentPercentage, 96)}%`;
+}
+function updateHpUI() {
+
+    const myHpText =
+        document.getElementById("myHpText");
+
+    const opponentHpText =
+        document.getElementById("opponentHpText");
+
+    const myHpBar =
+        document.getElementById("myHpBar");
+
+    const opponentHpBar =
+        document.getElementById("opponentHpBar");
+
+
+    myHpText.innerText =
+        `${myHp} / 100`;
+
+    opponentHpText.innerText =
+        `${opponentHp} / 100`;
+
+
+    myHpBar.style.width =
+        `${myHp}%`;
+
+    opponentHpBar.style.width =
+        `${opponentHp}%`;
+}
+
+    function showWrongCharacter(progress) {
+
+    const chars =
+        document.querySelectorAll(".char");
+
+    const currentChar =
+        chars[progress];
+
+    if (!currentChar) {
+        return;
+    }
+
+    currentChar.classList.add("wrong");
+
+    setTimeout(function () {
+
+        currentChar.classList.remove("wrong");
+
+    }, 200);
+}
+
+
+    let myUserId = null;
+    let hostId = null;
+    let guestId = null;
+    let myHp =100;
+    let opponentHp =100;
+
+
+    /*
+        WebSocket Connected
+    */
+
+    ws.onopen = function () {
+
+        console.log("WebSocket Connected");
+
+        status.innerText = "Connected";
+
+    };
+
+
+    /*
+        Receive WebSocket message
+    */
+
+    ws.onmessage = function (event) {
+
+        const data =
+            JSON.parse(event.data);
+
+
+        /*
+            Connected message
+        */
+
+        if (data.type === "connected") {
+
+        myUserId = data.user_id;
+        hostId =data.host_id;
+        guestId = data.guest_id;
+
+        renderPassage(data.target_text);
+
+        return;
+    }
+
+        if (data.type === "game_over") {
+
+            const winnerId = data.winner_id;
+
+            if (winnerId === myUserId) {
+
+                alert("🏆 YOU WIN!");
+
+            } else {
+
+                alert("💀 YOU LOSE!");
+
+            }
+
+            return;
+        }
+
+        /*
+            Typing result
+        */
+        if (
+            data.message &&
+            data.message.type === "typing_result"
+        ) {
+
+            const result =
+                data.message;
+
+
+            const player1Progress =
+                result.player1_progress;
+
+
+            const player2Progress =
+                result.player2_progress;
+
+
+            /*
+                Decide YOU / OPPONENT
+            */
+
+            let myValue;
+            let opponentValue;
+
+
+            if (myUserId === hostId) {
+
+            myValue =
+                player1Progress;
+
+            opponentValue =
+                player2Progress;
+
+        } else {
+
+            myValue =
+                player2Progress;
+
+            opponentValue =
+                player1Progress;
+        }
+
+
+            /*
+                Update numbers
+            */
+
+            myProgress.innerText =
+                myValue;
+
+
+            opponentProgress.innerText =
+                opponentValue;
+
+            const player1Hp = result.player1_hp;
+            const player2Hp = result.player2_hp;
+
+            if (myUserId === hostId) {
+
+                myHp = player1Hp;
+                opponentHp = player2Hp;
+
+            } else {
+
+                myHp = player2Hp;
+                opponentHp = player1Hp;
+            }
+
+            updateHpUI();
+            
+
+            updateCharacterProgress(
+            myValue,
+            opponentValue
+        );
+            if (!result.correct) {
+
+        showWrongCharacter(myValue);
+
+    }
+
+
+            /*
+                Calculate percentage
+            */
+
+            const targetLength =
+                document
+                    .getElementById("targetText")
+                    .innerText.length;
+
+            updateRacePosition(
+                myValue,
+                opponentValue,
+                targetLength
+            );
+
+
+            const myPercentage =
+                (myValue / targetLength) * 100;
+
+
+            const opponentPercentage =
+                (opponentValue / targetLength) * 100;
+
+
+            /*
+                Update progress bars
+            */
+
+            myProgressBar.style.width =
+                `${myPercentage}%`;
+
+
+            opponentProgressBar.style.width =
+                `${opponentPercentage}%`;
+
+        }
+
+    };
+
+
+    /*
+        WebSocket Closed
+    */
+
+    ws.onclose = function () {
+
+        console.log("WebSocket Disconnected");
+
+        status.innerText =
+            "Disconnected";
+
+    };
+
+
+    /*
+        WebSocket Error
+    */
+
+    ws.onerror = function (error) {
+
+        console.log(
+            "WebSocket Error:",
+            error
+        );
+
+        status.innerText =
+            "Connection Error";
+
+    };
+
+
+    /*
+        Typing
+    */
+
+    input.addEventListener(
+        "input",
+        function () {
+
+            const text =
+                input.value;
+
+
+            if (!text) {
+                return;
+            }
+
+
+            const char =
+                text[text.length - 1];
+
+
+            if (
+                ws.readyState !==
+                WebSocket.OPEN
+            ) {
+
+                return;
+            }
+
+
+            ws.send(
+                JSON.stringify({
+
+                    type: "typing",
+
+                    char: char
+
+                })
+            );
+
+
+            input.value = "";
+
+        }
+    );
+
+</script></body></html>

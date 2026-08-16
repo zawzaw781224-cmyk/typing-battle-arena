@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Typing Battle</title>
+
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+
+    <main class="auth-page">
+
+        <!-- Typing Preview -->
+
+        <section class="typing-preview">
+
+            <div class="logo">
+                <span>⚡</span>
+                TYPING BATTLE
+            </div>
+
+            <p class="tagline">
+                TYPE. FIGHT. WIN.
+            </p>
+
+
+            <div class="typing-card">
+
+                <div class="terminal-header">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+
+                <div class="typing-content">
+
+                    <p>
+                        The quick brown fox jumps over
+                        the lazy dog.
+                    </p>
+
+
+                    <div class="fake-progress">
+                        <div class="fake-progress-fill"></div>
+                    </div>
+
+
+                    <div class="stats">
+
+                        <div>
+                            <span>WPM</span>
+                            <strong>72</strong>
+                        </div>
+
+                        <div>
+                            <span>ACCURACY</span>
+                            <strong>98%</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="cursor">
+                        &gt;_ READY TO BATTLE<span>|</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Login Form -->
+
+        <section class="auth-card">
+
+            <div class="form-header">
+
+                <h1>Welcome Back</h1>
+
+                <p>
+                    Login and continue your battle.
+                </p>
+
+            </div>
+
+
+            <form id="loginForm">
+
+                <div class="input-group">
+
+                    <label for="username">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Enter your username"
+                        autocomplete="username"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    ⚡ START BATTLE
+                </button>
+
+            </form>
+
+
+            <div class="auth-switch">
+
+                <span>
+                    Don't have an account?
+                </span>
+
+                <a href="signup.html">
+                    Sign Up →
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/auth.js"></script>
+
+</body>
+
+</html>

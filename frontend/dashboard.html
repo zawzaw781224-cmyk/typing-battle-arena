@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Typing Battle</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+
+        <div class="logo">
+            ⚡ TYPING BATTLE
+        </div>
+
+        <div class="top-actions">
+
+            <span id="usernameDisplay">
+                Player
+            </span>
+
+            <button id="logoutBtn">
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main class="dashboard">
+
+        <section class="welcome-section">
+
+            <p class="small-title">
+                PLAYER DASHBOARD
+            </p>
+
+            <h1>
+                Welcome back,
+                <span id="welcomeUsername">Player</span> 👋
+            </h1>
+
+            <p>
+                Ready to type, fight and win?
+            </p>
+
+        </section>
+
+
+        <!-- Profile -->
+
+        <section class="profile-card">
+
+            <div class="profile-icon">
+                👤
+            </div>
+
+            <div class="profile-info">
+
+                <h2>My Profile</h2>
+
+                <div class="profile-row">
+
+                    <span>Username</span>
+
+                    <strong id="profileUsername">
+                        Loading...
+                    </strong>
+
+                </div>
+
+
+                <div class="profile-row">
+
+                    <span>Game ID</span>
+
+                    <strong id="gameId">
+                        Loading...
+                    </strong>
+
+                </div>
+
+
+                <div class="profile-row">
+
+                    <span>Account Created</span>
+
+                    <strong id="createdAt">
+                        Loading...
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Game -->
+
+        <section class="game-section">
+
+            <div class="section-title">
+
+                <h2>Choose Your Battle</h2>
+
+                <p>
+                    Select a game mode and challenge your friend.
+                </p>
+
+            </div>
+
+
+            <div class="game-cards">
+
+                <!-- Fight -->
+
+                <div class="game-card fight-card">
+
+                    <div class="game-icon">
+                        ⚔️
+                    </div>
+
+                    <h3>FIGHT</h3>
+
+                    <p>
+                        Type correctly and damage
+                        your opponent's HP.
+                    </p>
+
+                    <button
+                        class="game-btn"
+                        data-game-type="fight"
+                    >
+                        PLAY FIGHT
+                    </button>
+
+                </div>
+
+
+                <!-- Race -->
+
+                <div class="game-card race-card">
+
+                    <div class="game-icon">
+                        🏁
+                    </div>
+
+                    <h3>RACE</h3>
+
+                    <p>
+                        Type faster and reach
+                        the finish line first.
+                    </p>
+
+                    <button
+                        class="game-btn"
+                        data-game-type="race"
+                    >
+                        PLAY RACE
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Friends -->
+
+        <section class="friends-section">
+
+            <div>
+
+                <h2>Friends</h2>
+
+                <p>
+                    Challenge your friends to a battle.
+                </p>
+
+            </div>
+
+
+            <div class="friend-actions">
+
+                <button
+                    id="searchFriendBtn"
+                    class="secondary-btn"
+                >
+                    🔎 Search Friend
+                </button>
+                <button
+                    id="friendListBtn"
+                    class="secondary-btn"
+                >
+                    👥 Friend List
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

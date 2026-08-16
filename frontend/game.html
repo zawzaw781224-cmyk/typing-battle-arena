@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Typing Battle Arena</title>
+
+    <link
+        rel="stylesheet"
+        href="css/game.css"
+    >
+
+</head>
+
+
+<body>
+
+    <main class="game-container">
+
+        <div id="countdownOverlay" class="countdown-overlay">
+        <div id="countdownBox" class="countdown-box">
+        <div id="countdownText">3</div>
+        </div>
+        </div>
+
+        <!-- =========================
+             HEADER
+        ========================== -->
+
+        <header class="game-header">
+
+            <h1>
+                ⚔️ Typing Battle Arena
+            </h1>
+
+            <div
+                id="gameMode"
+                class="game-mode"
+            >
+                FIGHT
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             PLAYERS
+        ========================== -->
+
+        <section class="players-section">
+
+
+            <!-- PLAYER 1 -->
+
+            <div class="player-card">
+
+                <div class="player-avatar">
+                    👑
+                </div>
+
+                <div class="player-info">
+
+                    <h2 id="player1Name">
+                        You
+                    </h2>
+                <div class="fight-only">
+                    <div class="hp-label">
+                        HP
+                    </div>
+
+                    <div class="hp-bar">
+
+                        <div
+                            id="player1Hp"
+                            class="hp-fill"
+                        ></div>
+
+                    </div>
+
+                    <div
+                        id="player1HpText"
+                        class="hp-text"
+                    >
+                        100 / 100
+                    </div>
+                </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- VS -->
+
+            <div class="vs">
+
+                <span>VS</span>
+
+            </div>
+
+
+            <!-- PLAYER 2 -->
+
+            <div class="player-card">
+
+                <div class="player-avatar">
+                    👤
+                </div>
+
+                <div class="player-info">
+
+                    <h2 id="player2Name">
+                        Opponent
+                    </h2>
+                <div class="fight-only">
+                    <div class="hp-label">
+                        HP
+                    </div>
+
+                    <div class="hp-bar">
+
+                        <div
+                            id="player2Hp"
+                            class="hp-fill"
+                        ></div>
+
+                    </div>
+
+                    <div
+                        id="player2HpText"
+                        class="hp-text"
+                    >
+                        100 / 100
+                    </div>
+                </div>
+                </div>
+
+            </div>
+
+        </section>
+        <!-- =========================
+     RACE TRACK
+========================= -->
+
+<section
+    id="raceTrack"
+    class="race-track"
+>
+
+    <div class="race-road">
+
+        <!-- FINISH LINE -->
+
+        <div class="finish-line">
+            🏁
+        </div>
+
+
+        <!-- PLAYER 1 LANE -->
+
+        <div class="race-lane">
+
+            <div class="lane-label">
+                <span id="racePlayer1Name">
+                    Player 1
+                </span>
+            </div>
+
+            <img
+    id="raceCar1"
+    class="race-car"
+    src="assets/race/car1.gif"
+    alt="Player 1 car"
+>
+
+        </div>
+
+
+        <!-- PLAYER 2 LANE -->
+
+        <div class="race-lane">
+
+            <div class="lane-label">
+                <span id="racePlayer2Name">
+                    Player 2
+                </span>
+            </div>
+
+            <img
+    id="raceCar2"
+    class="race-car"
+    src="assets/race/car2.gif"
+    alt="Player 2 car"
+>
+
+        </div>
+
+    </div>
+
+</section>
+
+        
+
+
+        <!-- =========================
+             TARGET TEXT
+        ========================== -->
+
+        <section class="typing-section">
+
+            <div class="section-title">
+
+                <h2>
+                    Type the text below
+                </h2>
+
+            </div>
+
+
+            <div
+                id="targetText"
+                class="target-text"
+            >
+                The quick brown fox jumps over the lazy dog.
+            </div>
+
+
+            <!-- =========================
+                 TYPING INPUT
+            ========================== -->
+
+            <textarea
+                id="typingInput"
+                class="typing-input"
+                placeholder="Start typing here..."
+                autocomplete="off"
+                spellcheck="false"
+            ></textarea>
+
+
+            <!-- =========================
+                 PROGRESS
+            ========================== -->
+
+            <div class="progress-section">
+
+                <div class="progress-info">
+                    <span>
+                        Your Progress
+                    </span>
+
+                    <span id="yourProgressText">
+                        0%
+                    </span>
+
+                </div>
+
+
+                <div class="progress-bar">
+
+                    <div
+                        id="yourProgress"
+                        class="progress-fill"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="progress-section">
+
+                <div class="progress-info">
+
+                    <span>
+                        Opponent Progress
+                    </span>
+
+                    <span id="opponentProgressText">
+                        0%
+                    </span>
+
+                </div>
+
+
+                <div class="progress-bar">
+
+                    <div
+                        id="opponentProgress"
+                        class="progress-fill opponent"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             GAME MESSAGE
+        ========================== -->
+
+        <div
+            id="gameMessage"
+            class="game-message"
+        >
+            Get ready...
+        </div>
+
+
+    </main>
+
+
+    <script src="js/game.js"></script>
+
+</body>
+
+</html>

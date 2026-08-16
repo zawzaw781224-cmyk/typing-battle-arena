@@ -1,0 +1,222 @@
+/* =================================
+   RESULT PAGE
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 15px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #263b73 0%,
+            #11182e 45%,
+            #070b18 100%
+        );
+
+    color: #ffffff;
+}
+
+
+/* =================================
+   MAIN CARD
+================================= */
+
+main {
+    width: 100%;
+    max-width: 650px;
+
+    padding: 40px;
+
+    border-radius: 24px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 25px 60px
+        rgba(0, 0, 0, 0.45);
+
+    backdrop-filter: blur(15px);
+
+    text-align: center;
+}
+
+
+/* =================================
+   TITLE
+================================= */
+
+#resultTitle {
+    font-size: 42px;
+
+    margin-bottom: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* =================================
+   RESULT MESSAGE
+================================= */
+
+#resultMessage {
+    margin-bottom: 35px;
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    color: #cbd5ff;
+}
+
+
+/* =================================
+   RESULT INFO
+================================= */
+
+main > p {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 12px 0;
+
+    padding: 15px 18px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    color: #c7d0e8;
+
+    font-size: 16px;
+}
+
+
+/* =================================
+   VALUES
+================================= */
+
+main > p span {
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+
+/* =================================
+   DASHBOARD BUTTON
+================================= */
+
+#dashboardBtn {
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 15px 20px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5865f2,
+            #7c3aed
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+#dashboardBtn:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(88, 101, 242, 0.4);
+}
+
+
+#dashboardBtn:active {
+
+    transform:
+        translateY(0);
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 12px;
+    }
+
+    main {
+        padding: 28px 20px;
+
+        border-radius: 20px;
+    }
+
+    #resultTitle {
+        font-size: 32px;
+    }
+
+    #resultMessage {
+        font-size: 16px;
+    }
+
+    main > p {
+        font-size: 14px;
+
+        padding: 13px 14px;
+    }
+
+}

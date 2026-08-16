@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Friends | Typing Battle</title>
+
+    <link
+        rel="stylesheet"
+        href="css/friends.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =========================
+         TOP BAR
+    ========================== -->
+
+    <header class="topbar">
+
+        <div class="logo">
+            ⚡ TYPING BATTLE
+        </div>
+
+        <a
+            href="dashboard.html"
+            class="back-btn"
+        >
+            ← Dashboard
+        </a>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="friends-page">
+
+
+        <section class="page-header">
+
+            <p class="small-title">
+                SOCIAL
+            </p>
+
+            <h1>
+                Friends
+            </h1>
+
+            <p>
+                Find players and build your battle squad.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             SEARCH FRIEND
+        ========================== -->
+
+        <section class="search-card">
+
+            <h2>
+                🔎 Find a Player
+            </h2>
+
+            <p>
+                Search using your friend's Game ID.
+            </p>
+
+
+            <form id="searchForm">
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="gameIdInput"
+                        placeholder="Enter Game ID"
+                        required
+                    >
+
+                    <button
+                        type="submit"
+                    >
+                        Search
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <!-- Search Result -->
+
+            <div
+                id="searchResult"
+                class="search-result hidden"
+            >
+
+                <div class="player-info">
+
+                    <div class="avatar">
+                        👤
+                    </div>
+
+                    <div>
+
+                        <h3 id="foundUsername">
+                            Username
+                        </h3>
+
+                        <p>
+                            Game ID:
+                            <span id="foundGameId">
+                                -
+                            </span>
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="addFriendBtn"
+                    class="add-btn"
+                >
+                    + Add Friend
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             FRIEND LIST
+        ========================== -->
+
+        <section class="friends-list-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        👥 My Friends
+                    </h2>
+
+                    <p>
+                        Players in your friend list.
+                    </p>
+
+                </div>
+
+                <span
+                    id="friendCount"
+                    class="friend-count"
+                >
+                    0
+                </span>
+
+            </div>
+
+
+            <div
+                id="friendsList"
+                class="friends-list"
+            >
+
+                <div class="empty-state">
+
+                    <div>
+                        👥
+                    </div>
+
+                    <p>
+                        No friends yet.
+                    </p>
+
+                    <span>
+                        Search a player by Game ID to add them.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/friends.js"></script>
+
+</body>
+
+</html>

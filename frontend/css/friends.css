@@ -1,0 +1,397 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+
+    background: #080b12;
+
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 45px;
+
+    background: #10151f;
+
+    border-bottom: 1px solid #202938;
+}
+
+
+.logo {
+    font-size: 20px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.back-btn {
+    color: #94a3b8;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+
+.back-btn:hover {
+    color: #00e5ff;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.friends-page {
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 50px 30px;
+}
+
+
+.page-header {
+    margin-bottom: 35px;
+}
+
+
+.small-title {
+    color: #00e5ff;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+
+.page-header h1 {
+    font-size: 36px;
+
+    margin-bottom: 10px;
+}
+
+
+.page-header p:last-child {
+    color: #718096;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-card {
+    padding: 30px;
+
+    margin-bottom: 30px;
+
+    background: #10151f;
+
+    border: 1px solid #202938;
+
+    border-radius: 16px;
+}
+
+
+.search-card h2 {
+    font-size: 21px;
+
+    margin-bottom: 7px;
+}
+
+
+.search-card > p {
+    color: #718096;
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+}
+
+
+.search-box {
+    display: flex;
+
+    gap: 10px;
+}
+
+
+.search-box input {
+    flex: 1;
+
+    padding: 13px 15px;
+
+    border: 1px solid #293548;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #080b12;
+
+    color: #ffffff;
+
+    font-size: 14px;
+}
+
+
+.search-box input:focus {
+    border-color: #00e5ff;
+}
+
+
+.search-box button {
+    padding: 0 22px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #00e5ff;
+
+    color: #061018;
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   SEARCH RESULT
+========================= */
+
+.search-result {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-top: 20px;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    background: #151b27;
+
+    border: 1px solid #293548;
+}
+
+
+.player-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.avatar {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #202938;
+
+    font-size: 22px;
+}
+
+
+.player-info h3 {
+    margin-bottom: 5px;
+}
+
+
+.player-info p {
+    color: #718096;
+
+    font-size: 12px;
+}
+
+
+.add-btn {
+    padding: 10px 16px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #00e5ff;
+
+    color: #061018;
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   FRIEND LIST
+========================= */
+
+.friends-list-section {
+    padding: 30px;
+
+    background: #10151f;
+
+    border: 1px solid #202938;
+
+    border-radius: 16px;
+}
+
+
+.section-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+
+.section-header h2 {
+    margin-bottom: 6px;
+}
+
+
+.section-header p {
+    color: #718096;
+
+    font-size: 13px;
+}
+
+
+.friend-count {
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    background: #18202d;
+
+    color: #00e5ff;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   EMPTY
+========================= */
+
+.empty-state {
+    padding: 40px 20px;
+
+    text-align: center;
+
+    color: #718096;
+}
+
+
+.empty-state div {
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+
+.empty-state p {
+    color: #cbd5e1;
+
+    margin-bottom: 6px;
+}
+
+
+.empty-state span {
+    font-size: 12px;
+}
+
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden {
+    display: none;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .topbar {
+        padding: 0 20px;
+    }
+    .friends-page {
+        padding: 35px 20px;
+    }
+
+
+    .search-box {
+        flex-direction: column;
+    }
+
+
+    .search-box button {
+        padding: 12px;
+    }
+
+
+    .search-result {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .add-btn {
+        width: 100%;
+    }
+
+}
