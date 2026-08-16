@@ -2,7 +2,7 @@ console.log("GAME JS LOADED");
 
 
 const API_BASE_URL =
-    "https://typing-battle-arena-pypn.vercel.app";
+    "https://htet-typing.onrender.com";
 
 
 const token =
