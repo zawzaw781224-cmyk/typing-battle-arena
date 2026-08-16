@@ -1,12 +1,10 @@
 from fastapi import FastAPI
-from app.database import Base,engine
 from app.routers import auth
 from app.routers import friends
 from app.routers import rooms
 from app.routers import websocket
 from fastapi.middleware.cors import CORSMiddleware
 
-Base.metadata.create_all(bind=engine)
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
